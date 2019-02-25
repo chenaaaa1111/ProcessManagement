@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flowchart</title>
+    <meta name="description" content="Interactive flowchart diagram implemented by GoJS in JavaScript for HTML." />
+    <!-- Copyright 1998-2019 by Northwoods Software Corporation. -->
+    <meta charset="UTF-8">
+    <script src="GoJS/go.js"></script>
+    <script id="code" src="js/gosample.js">
+
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="sample">
+        <div style="width: 100%; display: flex; justify-content: space-between">
+            <div id="myPaletteDiv"
+                style="width: 100px; margin-right: 2px; background-color: whitesmoke; border: solid 1px black"></div>
+            <div id="myDiagramDiv" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
+        </div>
+        <p>
+            The FlowChart sample demonstrates several key features of GoJS,
+            namely <a href="../intro/palette.html">Palette</a>s,
+            <a href="../intro/links.html">Linkable nodes</a>, Drag/Drop behavior,
+            <a href="../intro/textBlocks.html">Text Editing</a>, and the use of
+            <a href="../intro/templateMaps.html">Node Template Maps</a> in Diagrams.
+        </p>
+        <p>
+            Mouse-over a Node to view its ports.
+            Drag from these ports to create new Links.
+            Selecting Links allows you to re-shape and re-link them.
+            Selecting a Node and then clicking its TextBlock will allow
+            you to edit text (except on the Start and End Nodes).
+        </p>
+        <button id="SaveButton" onclick="save()">Save</button>
+        <button onclick="load()">Load</button>
+        Diagram Model saved in JSON format:
+        <textarea id="mySavedModel" style="width:100%;height:300px">
+                { "class": "GraphLinksModel",
+                "copiesKey": false,
+                "linkFromPortIdProperty": "fromPort",
+                "linkToPortIdProperty": "toPort",
+                "nodeDataArray": [ 
+              {"category":"Comment", "loc":"360 -10", "text":"Kookie Brittle", "key":-13},
+              {"key":-1, "category":"Start", "loc":"175 0", "text":"Start"},
+              {"key":0, "loc":"-23 204", "text":"Preheat oven to 375 F"},
+              {"key":1, "loc":"175 100", "text":"In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"},
+              {"key":2, "loc":"175 200", "text":"Gradually beat in 1 cup sugar and 2 cups sifted flour"},
+              {"key":3, "loc":"175 290", "text":"Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
+              {"key":4, "loc":"175 380", "text":"Press evenly into ungreased 15x10x1 pan"},
+              {"key":5, "loc":"357.0000000000001 216", "text":"Finely chop 1/2 cup of your choice of nuts"},
+              {"key":6, "loc":"175 450", "text":"Sprinkle nuts on top"},
+              {"key":7, "loc":"175 515", "text":"Bake for 25 minutes and let cool"},
+              {"key":8, "loc":"175 585", "text":"Cut into rectangular grid"},
+              {"key":-2, "category":"End", "loc":"175 660", "text":"Enjoy!"}
+               ],
+                "linkDataArray": [ 
+              {"from":1, "to":2, "fromPort":"B", "toPort":"T", "points":[175,139.7508972167969,175,149.7508972167969,175,153.96886215209963,175,153.96886215209963,175,158.18682708740235,175,168.18682708740235]},
+              {"from":2, "to":3, "fromPort":"B", "toPort":"T", "points":[175,231.81317291259768,175,241.81317291259768,175,245,175,245,175,248.18682708740232,175,258.1868270874023]},
+              {"from":3, "to":4, "fromPort":"B", "toPort":"T", "points":[175,321.8131729125976,175,331.8131729125976,175,335,175,335,175,338.1868270874023,175,348.1868270874023]},
+              {"from":4, "to":6, "fromPort":"B", "toPort":"T", "points":[175,411.8131729125976,175,421.8131729125976,175,422.9377243041992,175,422.9377243041992,175,424.0622756958008,175,434.0622756958008]},
+              {"from":6, "to":7, "fromPort":"B", "toPort":"T", "points":[175,465.9377243041992,175,475.9377243041992,175,478.53113784790037,175,478.53113784790037,175,481.1245513916016,175,491.1245513916016]},
+              {"from":7, "to":8, "fromPort":"B", "toPort":"T", "points":[175,538.8754486083984,175,548.8754486083984,175,550,175,550,175,551.1245513916016,175,561.1245513916016]},
+              {"from":8, "to":-2, "fromPort":"B", "toPort":"T", "points":[175,608.8754486083984,175,618.8754486083984,175,618.8754486083984,175,617.4447747163995,175,617.4447747163995,175,627.4447747163995]},
+              {"from":-1, "to":0, "fromPort":"B", "toPort":"T", "points":[175,24.273340092148892,175,34.27334009214889,175,36,-23,36,-23,178.0622756958008,-23,188.0622756958008]},
+              {"from":-1, "to":1, "fromPort":"B", "toPort":"T", "points":[175,24.273340092148892,175,34.27334009214889,175,42.261221437676014,175,42.261221437676014,175,50.24910278320313,175,60.24910278320313]},
+              {"from":-1, "to":5, "fromPort":"B", "toPort":"T", "points":[175,24.273340092148892,175,34.27334009214889,175,36,357,36,357,182.12455139160153,357,192.12455139160153]},
+              {"from":5, "to":4, "fromPort":"B", "toPort":"T", "points":[357,239.87544860839841,357,249.87544860839841,357,252,357,252,357,332,212.82068634033203,332,212.82068634033203,338.1868270874023,212.82068634033203,348.1868270874023]},
+              {"from":0, "to":4, "fromPort":"B", "toPort":"T", "points":[-23,219.93772430419924,-23,229.93772430419924,-23,228,-23,228,-23,332,137.17931365966797,332,137.17931365966797,338.1868270874023,137.17931365966797,348.1868270874023]}
+               ]}
+  </textarea>
+        <button onclick="printDiagram()">Print Diagram Using SVG</button>
+    </div>
+    <script src="GoJS/go.js"></script>
+    <script id="code" src="js/gosample.js">
+
+    </script>
+</body>
+
+</html>
