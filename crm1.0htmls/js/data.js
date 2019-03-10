@@ -1,0 +1,43 @@
+[{
+    id:1,
+    title:'开发部门',
+    url:'',
+    child:[
+        {
+            id:12,
+            title:'报销流程',
+            url:'', 
+            parent:'',
+            child:[]
+
+        },
+        {
+            id:12,
+            title:'出差路程',
+            url:'',
+            child:[]
+        }
+    ]
+},
+{
+    id:1,
+    title:'财务部门',
+    url:'',
+    child:[
+        {
+            id:13,
+            title:'入职流程',
+            url:'', 
+            parent:'',
+            child:[]
+
+        },
+        {
+            id:14,
+            title:'离职路程',
+            url:'',
+            child:[]
+        }
+    ]
+}
+]

@@ -1,0 +1,15 @@
+.disabled{
+    height: 30px;line-height: 30px;padding: 0px 5px;color: #ddd;
+    border: 1px solid #ddd;border-radius: 5px;display: inline-block;
+    cursor: default;
+}
+.pageBox a{
+    display: inline-block;padding: 0px 10px;margin: 0px 3px;
+    height: 30px;line-height: 30px;border: 1px solid #337AB7;
+    border-radius: 3px;
+}
+.pageBox .current{
+    display: inline-block;padding: 0px 10px;margin: 0px 3px;
+    height: 30px;line-height: 30px;border: 1px solid #ddd;
+    border-radius: 3px;cursor: default;
+}

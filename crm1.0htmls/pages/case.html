@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布案例</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="./../css/imgUp.css">-->
+    <link rel="stylesheet" href="../css/case.css"/>
+    <link rel="stylesheet" href="../css/page.css"/>
+    <script src="../bootstrap/js/jquery-1.11.0.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="./../js/imgUp.js"></script>
+    <script src="../js/page.js"></script>
+</head>
+<body>
+    <ol class="breadcrumb">
+        <li><span>案例管理</span></li>
+        <li class="active">发布案例</li>
+    </ol>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加案例</button>
+            </div>
+        </div>
+        <div class="row tableRow">
+            <div class="col-xs-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>描述</th>
+                            <th>类型</th>
+                            <th>图片</th>
+                            <th>点赞数量</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Adidas运动背包2018秋季新款</td>
+                            <td>Adidas运动背包2018秋季新款，炫酷黑，青年绿隆重上市</td>
+                            <td>运动类</td>
+                            <td>
+                                <img src="../images/user.png"/>
+                                <img src="../images/user.png"/>
+                                <img src="../images/user.png"/>
+                            </td>
+                            <td>15</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                                <button type="button" class="btn btn-danger btn-xs">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Adidas运动背包2018秋季新款</td>
+                            <td>Adidas运动背包2018秋季新款，炫酷黑，青年绿隆重上市</td>
+                            <td>运动类</td>
+                            <td>
+                                <img src="../images/user.png"/>
+                                <img src="../images/user.png"/>
+                                <img src="../images/user.png"/>
+                            </td>
+                            <td>15</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                                <button type="button" class="btn btn-danger btn-xs">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Adidas运动背包2018秋季新款</td>
+                            <td>Adidas运动背包2018秋季新款，炫酷黑，青年绿隆重上市</td>
+                            <td>运动类</td>
+                            <td>
+                                <img src="../images/user.png"/>
+                                <img src="../images/user.png"/>
+                                <img src="../images/user.png"/>
+                            </td>
+                            <td>15</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                                <button type="button" class="btn btn-danger btn-xs">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pageBox"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加案例</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+
+                            <div class="card">
+                                <div class="img-box full">
+                                    <section class="img-section">
+                                        <!-- 						<p class="up-p">作品图片：<span class="up-span">最多可以上传5张图片，马上上传</span></p>
+                                         -->						<div class="z_photo upimg-div clear" >
+                                        <section class="z_file fl">
+                                            <img src="../images/a11.png" class="add-img">
+                                            <input type="file" data-descriptions="file" data-required="true"  name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                        </section>
+                                    </div>
+                                    </section>
+                                </div>
+                                <aside class="mask works-mask">
+                                    <div class="mask-content">
+                                        <p class="del-p ">您确定要删除图片吗？</p>
+                                        <p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+                                    </div>
+                                </aside>
+
+                            <label class="col-sm-2 control-label">上传图片</label>
+
+                            <div class="col-sm-10 ylimg">
+                                <img src="../images/user.png" />
+                                <img src="../images/user.png" />
+                                <img src="../images/user.png" />
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="title"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="classify" class="col-sm-2 control-label">类型</label>
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control" id="classify"/>-->
+                                <select class="form-control" name="classify" id="classify">
+                                    <option value="">请选择</option>
+                                    <option value="">服装类</option>
+                                    <option value="">食品类</option>
+                                    <option value="">运动类</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="describe" class="col-sm-2 control-label">描述</label>
+                            <div class="col-sm-10">
+                                <textarea id="describe" class="form-control describe" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/case.js"></script>
+</body>
+</html>

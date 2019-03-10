@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="./bootstrap/js/jquery-1.11.0.min.js"></script>
+	<script src="./js/request.js"></script>
+</head>
+
+<body>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+					<input type="text" class="login-field" value="" placeholder="username" id="login-name">
+					<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+					<input type="password" class="login-field" value="" placeholder="password" id="login-pass">
+					<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+				<a class="btn btn-primary btn-large btn-block" id="login" href="#">login</a>
+				<a class="login-link" href="#">登录</a>
+				<a class="login-link" href="#">忘记密码?</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function () {
+			//15269920820
+			//1234561
+			$("#login").click(function () {
+				var userName = $('#login-name').val();
+				var pass = $('#login-pass').val();
+				if (userName == '') {
+					alert('请输入用户名');
+
+				}
+				if (pass == '') {
+					alert('请输入密码');
+				}
+				var data = {
+					mobile: userName,
+					password: pass
+				}
+				request({
+					url: 'http://gj.i2f2f.com/public/index.php/index/members/login',
+					type: "post",
+					data: data,
+					success: function (res) {
+						console.log(res+"sdfsdf");
+						if(res.data.token){
+							sessionStorage.setItem('token',res.data.token);
+							sessionStorage.setItem('power',res.data.power);
+						}
+						if (res.code == 0) {
+							location.href = "./index.html";
+						} else {
+							alert(res.message);
+						}
+					}
+				}
+				);
+				// $.ajax({
+				// 	url: 'http://gj.i2f2f.com/public/index.php/index/members/login',
+				// 	type: "post",
+				// 	data: data,
+				// 	success: function (res) {
+				// 		console.log(res);
+				// 		// if (res.code == 0) {
+				// 		// 	location.href = "./index.html";
+				// 		// } else {
+				// 		// 	alert(res.message);
+				// 		// }
+				// 	}
+				// })
+			});
+		});
+	</script>
+</body>
+
+</html>

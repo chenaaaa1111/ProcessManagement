@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="./bootstrap/js/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>登录</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+					<input type="text" class="login-field" value="" placeholder="username" id="login-name">
+					<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+
+				<div class="control-group">
+					<input type="password" class="login-field" value="" placeholder="password" id="login-pass">
+					<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+
+				<a class="btn btn-primary btn-large btn-block" id="login" href="#">login</a>
+				<a class="login-link" href="#">注册</a>
+				<a class="login-link" href="#">忘记密码?</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function () {
+			//15269920820
+			//1234561
+			$("#login").click(function () {
+				var userName = $('#login-name').val();
+				var pass = $('#login-pass').val();
+				if (userName == '') {
+					alert('请输入用户名');
+					return;
+				}
+				if (pass == '') {
+					alert('请输入密码');
+					return;
+				}
+				var data = {
+					mobile: userName,
+					password: pass
+				}
+				$.ajax({
+					url: 'http://gj.i2f2f.com/public/index.php/index/members/login',
+					type: "post",
+					data: data,
+					success: function (res) {
+						console.log(res+"sdfsdf");
+						if(res.data.token){
+							sessionStorage.setItem('token',res.data.token);
+							sessionStorage.setItem('power',res.data.power);
+							sessionStorage.setItem('userName',res.data.name);
+							sessionStorage.setItem('department',res.data.department);
+						}
+						if (res.code == 0) {
+							location.href = "./index.html";
+						} else {
+							alert(res.message);
+						}
+					}
+				}
+				);
+			
+			});
+		});
+	</script>
+</body>
+
+</html>

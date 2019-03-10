@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flowchart</title>
+  <meta name="description" content="Interactive flowchart diagram implemented by GoJS in JavaScript for HTML." />
+  <!-- Copyright 1998-2019 by Northwoods Software Corporation. -->
+  <meta charset="UTF-8">
+    <script src="../bootstrap/js/jquery-1.11.0.min.js"></script>
+     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="../gojs/go.js"></script>
+  <!-- <script src="../assets/js/goSamples.js"></script>  this is only for the GoJS Samples framework -->
+
+
+  </script>
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
+
+  <style>
+    #myPaletteDiv {
+      display: none;
+    }
+
+    #myDiagramDiv {
+      width: 1000px;
+    }
+
+    #gramContainer {
+      height: 400px;
+      /* width: 1200px; */
+      overflow: scroll;
+    }
+
+    .inputool {
+      width: 150px;
+   
+    }
+
+    .flex {
+      display: flex;
+      width: 100%;
+    }
+
+    #sample {
+      padding: 20px;
+      width: 1400px;
+      background: #eee;
+      margin: 0 auto;
+    }
+
+    .centenContainer {
+      padding: 20px;
+    }
+
+    .cmessage {
+      width: 300px;
+    }
+
+    .flexbt {
+      display: flex;
+    }
+
+    .cece {
+      width: 300px;
+      margin-left: 200px;
+
+    }
+    .cece p{
+     margin-top: 10px;
+     padding: 10px 15px;
+
+    }
+
+    .cece h3 {
+      width: 300px;
+      text-align: center;
+
+    }
+
+    .left {
+      width: 150px;
+    }
+
+    .center {
+      width: 1045px;
+      background: #3F51B5;
+      color: #fff;
+    }
+
+    .cece p {
+      color: #fff;
+      background: #8BC34A;
+      height: 50px;
+
+    }
+    p{
+      padding: 5px;
+    }
+    .center{
+      padding: 15px;
+      margin: 5px;
+    }
+    .botomcenter {
+      justify-content: space-around;
+    }
+    .downLoad{
+      margin: 10px 10px 20px 10px;
+
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+      color: #12B7F5;
+    }
+    .centerts{
+      background: #FF9800;
+      margin-left: 5px;
+      color: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .inputool{
+      background: #FFFF00;
+      color: #fff;
+      margin-top: 150px;
+      padding: 10px;
+    }
+    .left,.right{
+      background: #FFFF00;
+      color: #fff;
+      width: 150px;
+      padding: 20px 10px 0px 10px;
+    }
+  </style>
+</head>
+
+<body onload="init()">
+  <div id="sample">
+    <div style="width: 100%; display: flex; justify-content: space-between">
+      <div id="myPaletteDiv"
+        style="width: 100px; margin-right: 2px; background-color: whitesmoke; border: solid 1px black"
+        style="display:none"></div>
+      <div class="flex">
+        <div class="inputool">
+          <h3>输入产品</h3>
+          <p class="message" id="t1">输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的</p>
+        </div>
+        <div class="centenContainer">
+          <div class="flex">
+            <div class="centerts">
+              <h4>目的</h4>
+              <p class="cmessage" id="t2">目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的</p>
+            </div>
+            <div class="centerts">
+              <h4>范围</h4>
+              <p class="cmessage" id="t3">目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的</p>
+            </div>
+            <div class="centerts">
+              <h4>策略</h4>
+              <p class="cmessage" id="t4">目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的目的</p>
+            </div>
+          </div >
+          <div id="gramContainer">
+
+            <div id="myDiagramDiv" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
+          </div>
+        </div>
+
+        <div class="inputool">
+          <h3>输出产品</h3>
+          <p id="t5">输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的输入目的</p>
+        </div>
+      </div>
+
+
+    </div>
+    <div>
+      <div class="flexbt">
+        <div class="cece">
+          <h3>活动</h3>
+          <p id="t6">12312312</p>
+        </div>
+        <div class="cece">
+          <h3>角色</h3>
+          <p id="t7">
+            1231231
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="left">
+        <h3>输入准则</h3>
+        <p id="t8">123123123</p>
+      </div>
+      <div class="center">
+        <div class="flex botomcenter">
+          <div>
+            <h4>活动目的</h4>
+            <p id="t9">12312121212121312</p>
+          </div>
+          <div>
+            <h4>活动裁剪</h4>
+            <p id="t10">12312121212121312</p>
+          </div>
+          <div>
+            <h4>财务负责人</h4>
+            <p id="t11">12312121212121312</p>
+          </div>
+        </div>
+        <div>
+          <button style="width:100%" class="ui-btn ui-btn-primary downLoad">下载附件</button>
+        </div>
+        <h4>财务负责人：<span id="t12">刘明</span> </h4>
+      </div>
+      <div class="right">
+        <h3>输出准则</h3>
+        <p id="t13">123123123</p>
+      </div>
+    </div>
+   <!-- Button trigger modal -->
+    <button type="button" style="display: none;" id="toggle" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">输入详细信息</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">输入产品</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="输入产品">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">输出产品</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">活动</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">角色</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">输入准则</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">输出准则</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">活动目的</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">活动裁剪</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">财务负责人</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+                 <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">上传附件</label>
+                <div class="col-sm-10">
+                  <input type="file" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- Button trigger modal -->
+    <!-- <button id="SaveButton" onclick="save()">Save</button>
+  <button onclick="load()">Load</button> -->
+    <!-- Diagram Model saved in JSON format: -->
+    <textarea id="mySavedModel" style="width:100%;height:300px;display: none">
+
+{ "class": "go.GraphLinksModel",
+  "linkFromPortIdProperty": "fromPort",
+  "linkToPortIdProperty": "toPort",
+  "nodeDataArray": [
+{"category":"Comment", "loc":"360 -10", "text":"Kookie Brittle", "key":-13},
+{"key":-1, "category":"Start", "loc":"175 0", "text":"Start"},
+{"key":0, "loc":"-5 75", "text":"Preheat oven to 375 F"},
+{"key":1, "loc":"175 100", "text":"In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"},
+{"key":2, "loc":"175 200", "text":"Gradually beat in 1 cup sugar and 2 cups sifted flour"},
+{"key":3, "loc":"175 290", "text":"Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
+{"key":4, "loc":"175 380", "text":"Press evenly into ungreased 15x10x1 pan"},
+{"key":5, "loc":"355 85", "text":"Finely chop 1/2 cup of your choice of nuts"},
+{"key":6, "loc":"175 450", "text":"Sprinkle nuts on top"},
+{"key":7, "loc":"175 515", "text":"Bake for 25 minutes and let cool"},
+{"key":8, "loc":"175 585", "text":"Cut into rectangular grid"},
+{"key":-2, "category":"End", "loc":"175 660", "text":"Enjoy!"}
+ ],
+  "linkDataArray": [
+{"from":1, "to":2, "fromPort":"B", "toPort":"T"},
+{"from":2, "to":3, "fromPort":"B", "toPort":"T"},
+{"from":3, "to":4, "fromPort":"B", "toPort":"T"},
+{"from":4, "to":6, "fromPort":"B", "toPort":"T"},
+{"from":6, "to":7, "fromPort":"B", "toPort":"T"},
+{"from":7, "to":8, "fromPort":"B", "toPort":"T"},
+{"from":8, "to":-2, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":0, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":1, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":5, "fromPort":"B", "toPort":"T"},
+{"from":5, "to":4, "fromPort":"B", "toPort":"T"},
+{"from":0, "to":4, "fromPort":"B", "toPort":"T"}
+ ]}
+  </textarea>
+    <!-- <button onclick="printDiagram()">Print Diagram Using SVG</button> -->
+    <!-- 打印按钮   -->
+    <script>
+      function clickhandle() {
+        window.parent.document.getElementById('iframe').src = 'showManager.html'
+      }
+    </script>
+      <script id="code" src="../gojs/createProgress.js"></script>
+  </div>
+</body>
+
+</html>

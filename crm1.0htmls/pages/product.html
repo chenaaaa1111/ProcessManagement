@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品管理</title>
+    <link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
+    <link rel="stylesheet" href="../css/product.css"/>
+    <script src="../bootstrap/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/diaLog.js"></script>
+</head>
+<body>
+
+<div id="tableDiv">
+    <div>
+        <button class="adbtn">添加产品</button>
+    </div>
+    <table class="productItem">
+        <thead>
+        <tr>
+            <td class="inputtd">
+                <input type="checkbox" class="" name=""/>
+            </td>
+            <td>标题</td>
+            <td>描述</td>
+            <td>产品分类</td>
+            <td>图片</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="checkbox" name=""/></td>
+            <td>湖南长沙拉萨</td>
+            <td>湖南长沙拉萨</td>
+            <td>湖南长沙拉萨</td>
+            <td class="imgtd"><img src="../images/user.png"/></td>
+            <td>
+                <button class="ui-btn ui-btn-primary showdialog">编辑</button>
+                <button class="ui-btn ui-btn-danger">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name=""></td>
+            <td>湖南长沙拉萨</td>
+            <td>湖南长沙拉萨</td>
+            <td>湖南长沙拉萨</td>
+            <td class="imgtd"><img src="../images/user.png"/></td>
+            <td>
+                <button class="ui-btn ui-btn-primary showdialog">编辑</button>
+                <button class="ui-btn ui-btn-danger">删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="mubandialog dialog">
+        <div class="formDiv ">
+            <form>
+                <div class="ui-form-item ui-border-b">
+                    <label>
+                        标题
+                    </label>
+                    <input type="text" placeholder="18位身份证号码"/>
+                </div>
+                <div class="ui-form-item  ui-border-b">
+                    <label>
+                        描述
+                    </label>
+                    <input type="text" placeholder="请输入描述信息"/>
+
+                </div>
+                <div class="ui-form-item  ui-border-b">
+                    <label>
+                        产品分类
+                    </label>
+                    <input type="text" placeholder="请输入产品分类"/>
+                </div>
+                <div class="ui-form-item  ui-border-b">
+                    <label>
+                        上传图片
+                    </label>
+                </div>
+                <div class="ui-btn-wrap">
+                    <button class="ui-btn ui-btn-primary">确定</button>
+                    <button class="ui-btn ui-btn-danger hidedialog">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+

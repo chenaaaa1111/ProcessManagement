@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面流程</title>
+    <link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
+    <script src="../bootstrap/js/jquery-1.11.0.min.js"></script>
+    <script src="./../js/request.js"></script>
+    <style>
+        body {
+            background: #eee;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .press {
+            width: 33%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #gressManagerList .title {
+            text-align: center;
+        }
+
+        .prosslist {
+            border-bottom: 1px solid #cccc;
+        }
+
+        .title {
+            padding: 10px 5px;
+        }
+
+        #container {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="gressManagerList">
+            <div class="prosslist">
+                <h1 class="title">报销流程</h1>
+                <div class="flex">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        var pid = geturl('pid');
+        var title = geturl('title');
+        console.log('id', pid, title);
+        request({
+            url: 'http://gj.i2f2f.com/public/index.php/index/members/process_child',
+            type: 'post',
+            data: {
+                did: pid
+            },
+            success: function (res) {
+                var html = '';
+                if (res.data.length > 0) {
+                    res.data.forEach(function (element) {
+
+                        html += '<div class="press" >\
+    <a href="showManager.html?id='+ element.id + '"> <button type="primary" class="ui-btn ui-btn-primary">' + element.name + '</button></a>\
+</div>'
+
+                    });
+                    console.log('jtml', html);
+                    $(".title").html(title);
+                    $(".flex").html(html);
+                }else{
+                    $(".flex").html('<div style="text-align:center;width: 100%;padding: 7px 10px;">暂未创建~</div>');
+                    $(".title").html(title);
+                }
+
+            }
+        })
+    })
+
+</script>
+
+</html>
